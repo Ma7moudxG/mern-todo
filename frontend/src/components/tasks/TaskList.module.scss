@@ -8,17 +8,16 @@
 }
 .addNew {
 	display: inline-block;
-	background-color: #187f52;
+	background-color: #000000;
 	padding: 1rem 2rem;
-	font-size: 1.8rem;
+	font-size: 1.5rem;
 	border: none;
 	color: white;
 	border-radius: 50px;
 	cursor: pointer;
-	transition: 0.3s ease background-color, 0.3s ease color;
 	&:hover {
-		background-color: #156542;
-		color: rgb(205, 205, 205);
+		background-color: #383838;
+		color: rgb(255, 255, 255);
 	}
 }
 .addNewForm {
@@ -33,20 +32,19 @@
 		font-size: 1.8rem;
 		color: black;
 		padding: 1rem;
-		background-color: #bbbbbb;
+		background-color: rgba(189, 189, 189, 0.174);
 	}
 	button[type='submit'] {
-		background-color: #bbbbbb;
-		padding: 0.5rem 2rem;
-		font-size: 1.8rem;
+		background-color: #000000;
+		padding: 0.5rem 4rem;
+		font-size: 1.5rem;
 		border: none;
-		color: black;
-		border-radius: 6px;
+		color: white;
+		border-radius: 50px;
 		cursor: pointer;
-		transition: 0.3s ease background-color, 0.3s ease color;
 		&:hover {
-			background-color: #156542;
-			color: rgb(205, 205, 205);
+			background-color: #383838;
+			color: rgb(255, 255, 255);
 		}
 	}
 }

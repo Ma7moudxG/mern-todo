@@ -1,31 +1,40 @@
 .register,
 .login {
-	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .title {
+	margin-top: 3rem;
 	font-size: 3rem;
 }
 .authForm {
 	margin-top: 2rem;
-	width: 100%;
+	width: 90%;
 	label {
 		width: 100%;
-		font-size: 2rem;
+		font-size: 1.3rem;
+		color: rgb(175, 175, 175);
 	}
 	input {
-		font-size: 2rem;
+		font-size: 1.8rem;
 		width: 100%;
 		margin-bottom: 2rem;
 		margin-top: 0.5rem;
 		padding: 1rem;
 		border-radius: 6px;
 		border: none;
-		background-color: rgb(206, 206, 206);
+		background-color: rgb(240, 240, 240);
 	}
 	button[type='submit'] {
-		font-size: 2rem;
-		padding: 0.5rem 1rem;
+		font-size: 1.8rem;
+		padding: 0.75rem 1.5rem;
 		cursor: pointer;
+		background-color: black;
+		color: white;
+		border: none;
+		align-items: center;
 	}
 }

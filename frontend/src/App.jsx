@@ -11,7 +11,7 @@ function App() {
   return (
     <>
         <Toaster 
-            position='top-right'
+            position='top-center'
             toastOptions={{
                 style: {
                     fontSize: '1.8rem'

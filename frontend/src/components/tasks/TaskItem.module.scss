@@ -1,5 +1,8 @@
+$small: 480px;
+$medium: 920px;
+
 .task_item {
-	background-color: rgba(128, 128, 128, 0.174);
+	background-color: rgba(211, 211, 211, 0.174);
 	margin-top: 0.5rem;
 	border-radius: 6px;
 	font-size: 1.5rem;
@@ -7,12 +10,21 @@
 		background-color: rgba(95, 95, 95, 0.2);
 	}
 	td {
-		padding: 0.3rem;
+		padding: 0.5rem;
 	}
 	.isCompleted,
 	.date,
 	.btnCenter {
 		text-align: center;
+	}
+	.isCompleted,
+	.date {
+		@media screen and (max-width: $small) {
+			font-size: 1rem;
+		}
+		@media screen and (min-width: $medium) {
+			font-size: 1.5rem;
+		}
 	}
 	.task_name {
 		max-width: 200px;
@@ -54,11 +66,18 @@ button {
 }
 
 .deleteBtn {
-	border: 1px solid crimson;
-	color: crimson;
+	border: none;
+	background-color: black;
+	color: rgb(255, 255, 255);
 	&:hover {
 		background-color: crimson;
 		color: white;
+	}
+	@media screen and (max-width: $small) {
+		font-size: 1rem;
+	}
+	@media screen and (min-width: $medium) {
+		font-size: 1.5rem;
 	}
 }
 
