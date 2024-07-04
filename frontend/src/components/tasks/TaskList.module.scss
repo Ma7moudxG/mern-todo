@@ -19,36 +19,55 @@
 		background-color: #383838;
 		color: rgb(255, 255, 255);
 	}
+	@media screen and (max-width: 480px) {
+		font-size: 1.2rem;
+		padding: 0.75rem 1.5rem;
+	}
 }
 .addNewForm {
 	width: 100%;
 	display: flex;
 	gap: 1rem;
+	@media screen and (max-width: 480px) {
+		font-size: 1.2rem;
+	}
 	input {
 		width: 100%;
 		padding: 0.5rem;
 		border: none;
-		border-radius: 5px;
-		font-size: 1.8rem;
+		border-radius: 50px;
+		font-size: 1.5rem;
 		color: black;
 		padding: 1rem;
 		background-color: rgba(189, 189, 189, 0.174);
+		@media screen and (max-width: 480px) {
+			font-size: 1.2rem;
+		}
 	}
 	button[type='submit'] {
 		background-color: #000000;
-		padding: 0.5rem 4rem;
+		padding: 0.5rem 2rem;
 		font-size: 1.5rem;
 		border: none;
 		color: white;
 		border-radius: 50px;
 		cursor: pointer;
 		&:hover {
-			background-color: #383838;
+			background-color: rgb(49, 49, 49);
 			color: rgb(255, 255, 255);
+		}
+		@media screen and (max-width: 480px) {
+			font-size: 1.2rem;
 		}
 	}
 }
 .taskList_table {
 	width: 100%;
 	margin-top: 2rem;
+}
+
+.noTasks {
+	font-size: 1.6rem;
+	text-align: center;
+	margin-top: 4rem;
 }

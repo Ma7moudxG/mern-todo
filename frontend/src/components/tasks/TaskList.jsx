@@ -105,7 +105,7 @@ export default function TaskList() {
                     ))}
                 </tbody>
             </table>
-        ) : "No tasks yet"}
+        ) : (<p className={classes.noTasks}>No tasks yet</p>)}
     </div>
   )
 }

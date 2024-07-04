@@ -41,7 +41,7 @@ export default function Navbar() {
             <div>
                 <h1 className={classes.name}>{user.name}</h1>
                 <h1 className={classes.email}>{user.email}</h1>
-                <Link to='/edit-profile' className={classes.edit} >Edit</Link>
+                <Link to='/edit-profile' className={classes.edit} >Edit Profile</Link>
             </div>
         </div>
         <nav>

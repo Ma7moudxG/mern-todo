@@ -4,7 +4,7 @@ $medium: 920px;
 .task_item {
 	background-color: rgba(211, 211, 211, 0.174);
 	margin-top: 0.5rem;
-	border-radius: 6px;
+	border-radius: 50px;
 	font-size: 1.5rem;
 	&:hover {
 		background-color: rgba(95, 95, 95, 0.2);
@@ -32,6 +32,9 @@ $medium: 920px;
 		align-items: center;
 		justify-content: flex-start;
 		gap: 0.5rem;
+		@media screen and (max-width: 480px) {
+			font-size: 1.2rem;
+		}
 		.checkbox {
 			width: 3rem;
 			height: 3rem;
