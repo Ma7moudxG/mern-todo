@@ -42,13 +42,13 @@ function TaskItem({ task, deleteTask, editTask }) {
         >
           Delete
         </button>
-        {/* <button
+        <button
           type="button"
           className={classes.editBtn}
           onClick={(e) => editTask(task._id, e)}
         >
           Edit
-        </button> */}
+        </button>
       </td>
     </tr>
   );

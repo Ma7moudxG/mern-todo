@@ -7,7 +7,7 @@ import classes from './AuthForm.module.scss';
 
 function Login() {
   const navigate = useNavigate();
-
+  
   const login = async (e) => {
     e.preventDefault();
     

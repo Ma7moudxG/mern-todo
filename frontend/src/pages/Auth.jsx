@@ -9,7 +9,7 @@ import classes from './Auth.module.scss';
 function Auth() {
   const { auth } = useAuth();
   const navigate = useNavigate();
-  const [login, setLogin] = useState(false)
+  const [login, setLogin] = useState(true)
 
   const loginTrigger = () => {
     setLogin(!login);

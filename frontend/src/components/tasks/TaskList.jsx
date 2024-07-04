@@ -9,7 +9,9 @@ export default function TaskList() {
     const [isAddingNew, setIsAddingNew] = useState(false);
     const [newTask, setNewTask] = useState('');
     const [editedTask, setEditedTask] = useState('');
+    const [editedTaskId, setEditedTaskId] = useState(0);
     const [isEditing, setIsEditing] = useState(false);
+    const [isLoading, setIsLoading] = useState(false)
 
     const addNewTask = async (e) => {
         e.preventDefault();
@@ -34,10 +36,31 @@ export default function TaskList() {
     const editTask = async (id, e) => {
         e.preventDefault();
         setIsEditing(!isEditing);
+        setEditedTaskId(id);
     }
 
-    const updateTask = () => {
-
+    const updateTask = async (e) => {
+        e.preventDefault();
+        console.log(editedTaskId);
+        setEditedTask(e.target[0].value);
+        if(editedTask.length <= 0) {
+            toast.error('Task is empty')
+            return;
+        }
+        try {
+            setIsLoading(true);
+            await axios.put(`/api/tasks/${editedTaskId}`, {
+              title: editedTask,
+            });
+            setIsEditing(!isEditing);
+            setEditedTaskId('')
+            toast.success('Task updated successfully');
+            window.location.reload();
+          } catch (err) {
+            console.log(err);
+          } finally {
+            setIsLoading(false);
+          }
     }
 
 
@@ -54,7 +77,7 @@ export default function TaskList() {
     };
 
     const addNewButtonClick = () => {
-        setIsAddingNew(!isAddingNew);
+        if (!isEditing) setIsAddingNew(!isAddingNew);
     }
 
     useEffect(() => {
@@ -80,7 +103,7 @@ export default function TaskList() {
             >Add new</button>
         </div>
         {isAddingNew && (
-            <form className={classes.addNewForm} onSubmit={addNewTask}>
+            <form className={classes.addNewForm} onSubmit={(e) => addNewTask(e)}>
                 <input type="text" value={newTask} 
                 onChange={e => setNewTask(e.target.value)}
                 placeholder='Task Title'
@@ -88,20 +111,22 @@ export default function TaskList() {
                 <button type='submit'>Add</button>
             </form>
         )}
-        {/* {isEditing && (
+        {isEditing && (
             <form className={classes.addNewForm} onSubmit={updateTask}>
-                <input type="text" value={newTask} 
-                onChange={e => setNewTask(e.target.value)}
+                <input type="text" value={editedTask} 
+                onChange={e => setEditedTask(e.target.value)}
                 placeholder='Task Title'
                 />
                 <button type='submit'>Save</button>
             </form>
-        )} */}
+        )}
         {taskList.length > 0 ? (
             <table className={classes.taskList_table}>
                 <tbody>
                     {taskList.map( (task) => (
-                        <TaskItem key={task._id} task={task} deleteTask = {deleteTask} editTask = {editTask} />
+                        <TaskItem key={task._id} task={task} 
+                            deleteTask = {deleteTask} editTask = {editTask}
+                             />
                     ))}
                 </tbody>
             </table>

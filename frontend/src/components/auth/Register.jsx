@@ -2,9 +2,11 @@
 import React from 'react'
 import classes from './AuthForm.module.scss'
 import toast from 'react-hot-toast';
-import axios from 'axios'
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
+    const navigate = useNavigate();
     const register = async (e) => {
     e.preventDefault();
     const user = {
@@ -14,11 +16,13 @@ export default function Register() {
     };
     try {
         await axios.post('/api/auth/register', user);
+        navigate('/');
         toast.success('Registered Successfully');
     } catch(err) {
         console.log(err);
-        toast.err('Register Failed')
+        toast.error('Register Failed')
     }
+    
     }
   return (
     <div className={classes.register}>

@@ -65,17 +65,9 @@ button {
 	padding: 0.5rem 1rem;
 	border-radius: 50px;
 	cursor: pointer;
-	transition: 0.3s ease background-color, 0.3s ease color;
-}
-
-.deleteBtn {
-	border: none;
 	background-color: black;
 	color: rgb(255, 255, 255);
-	&:hover {
-		background-color: crimson;
-		color: white;
-	}
+	transition: 0.3s ease background-color, 0.3s ease color;
 	@media screen and (max-width: $small) {
 		font-size: 1rem;
 	}
@@ -84,10 +76,16 @@ button {
 	}
 }
 
+.deleteBtn {
+	border: none;
+	&:hover {
+		background-color: crimson;
+		color: white;
+	}
+}
+
 .editBtn {
-	border: 1px solid orange;
-	padding: 0.5rem 1.5rem;
-	color: orange;
+	border: none;
 	margin-left: 5px;
 	&:hover {
 		background-color: orange;
