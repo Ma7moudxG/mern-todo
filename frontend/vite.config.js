@@ -9,7 +9,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: "https://mern-todo-xllz.onrender.com"
+        target: "http://localhost:8000"
       }
     }
   }
